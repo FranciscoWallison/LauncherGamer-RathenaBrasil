@@ -1,7 +1,7 @@
 # Launcher Gamer-RathenaBrasil
 
 ### OBS
-    Os arquivos de configuração na rais deste projeto são necessários arquivos.
+    Os arquivos de configuração na rais deste projeto são necessários como .env.
     Tendo como base o arquivo .env.example
     pode renomear para .env, com as demais informações como "LOGO="logo.png" e "IMAGE_BACKGROUND="background.jpg".
 
