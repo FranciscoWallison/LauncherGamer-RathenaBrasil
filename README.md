@@ -1,6 +1,32 @@
 # Launcher Gamer-RathenaBrasil
 
- ## Resposta de Login
+
+## Para configurações 
+Cire uma arquivo ````.env```` da rais do projeto e adicione as sequinte configurações.
+#### Titulo do ````.exe```` .
+TITLE_RO="RathenaBrasil"
+#### Icone o diretorio do arquivo ````.ico```` que queira usar.
+FILE_ICON="ro.ico"
+#### Imagem de plano de fundo
+IMAGE_BACKGROUND="background.jpg"
+#### Consuta da Api, validar login
+URL_LOGIN="http://localhost:6363/api/user/login"
+#### Consuta da Api, criar conta
+URL_CREATE_Account="http://localhost:6363/api/user/create"
+#### Executavel do servidor, lebrar deixar como ````-1rag1````
+EXE_RO="login.exe"
+#### Executavel o arquivo de configurações.
+EXE_SETEUP="Setup.exe"
+#### Imagem da logo que fica no topo de login
+LOGO="logo.png"
+#### Funcionalidade GIT OBS::AINDA EM FAZE DE TESTE
+GIT_UPDATE=false
+
+
+
+#### Consuta da Api, como ele consume as infomrções e manda.
+
+## Resposta de Login
  #### Envio
  ````
       {
