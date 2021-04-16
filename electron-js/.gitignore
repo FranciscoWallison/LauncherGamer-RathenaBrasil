@@ -1,0 +1,8 @@
+*
+!css/
+!.gitignore
+!package.json
+!index.js
+!index.html
+!README.md
+!.env.example
