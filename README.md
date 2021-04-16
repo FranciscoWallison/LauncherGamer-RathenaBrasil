@@ -1,5 +1,7 @@
 # Launcher Gamer-RathenaBrasil
 
+<img src="https://github.com/FranciscoWallison/LauncherGamer-RathenaBrasil/blob/main/apresenta%C3%A7%C3%A3o/errors.gif" width="300" /> <img src="https://github.com/FranciscoWallison/LauncherGamer-RathenaBrasil/blob/main/apresenta%C3%A7%C3%A3o/teste.gif" width="300" />
+
 
 ## Para configurações 
 Cire uma arquivo ````.env```` da rais do projeto e adicione as sequinte configurações.
