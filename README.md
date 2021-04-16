@@ -38,9 +38,9 @@ GIT_UPDATE=false
  ````
 ####  Retorno
 ````
-      Resposta com error
+      Error
           {"error":["Essa conta não existe."]}
-      Resposta sucesso
+      Sucesso
           {}
 ````
  ## Resposta Criar Conta
