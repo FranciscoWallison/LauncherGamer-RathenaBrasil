@@ -20,7 +20,9 @@
     - npm run dist ou yarn dist
 
 O comando ````npm install ou yarn install```` para baixar todos os pacotes.
+
 O comando ````npm run dev ou yarn dev```` executando o projeto.
+
 O comando ````npm run dist ou yarn dist```` builder projeto.
 
 
