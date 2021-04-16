@@ -24,4 +24,12 @@ O comando ````npm run dev ou yarn dev```` executando o projeto.
 O comando ````npm run dist ou yarn dist```` builder projeto.
 
 
-## Esse projeto foi desenvolvido com as seguintes tecnologias:
+## Esse projeto foi desenvolvido atualmente com as seguintes tecnologias:
+    º Node.js
+    º NPM
+    º electron
+    º electron-builde
+    º child_process
+    º dotenv
+    º node-powershell
+    º simple-git
