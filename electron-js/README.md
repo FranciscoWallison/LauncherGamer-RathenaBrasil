@@ -35,4 +35,4 @@ O comando ````npm run dist ou yarn dist```` builder projeto.
     º dotenv
     º node-powershell
     º simple-git
-    º vanilla js (da pior qualidade) obs: dicas para melhorar
+    º vanilla js (Pior qualidade) obs: dicas para melhorar
