@@ -1,6 +1,10 @@
 # Launcher Gamer-RathenaBrasil
 
+
+
 <img src="https://github.com/FranciscoWallison/LauncherGamer-RathenaBrasil/blob/main/apresenta%C3%A7%C3%A3o/errors.gif" width="300" /> <img src="https://github.com/FranciscoWallison/LauncherGamer-RathenaBrasil/blob/main/apresenta%C3%A7%C3%A3o/teste.gif" width="300" />
+<img src="https://github.com/FranciscoWallison/LauncherGamer-RathenaBrasil/blob/main/apresenta%C3%A7%C3%A3o/load.gif" width="300" />
+
 ## Para Desenvolvimento 
 Leia o README.md da [pasta](https://github.com/FranciscoWallison/LauncherGamer-RathenaBrasil/tree/main/electron-js) ````./electron-js````
 ## Para configurações 
