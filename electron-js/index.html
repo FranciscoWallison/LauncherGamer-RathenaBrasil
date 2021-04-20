@@ -43,7 +43,7 @@
 		</div>
 		<div class="form-container sign-in-container">
 			<div class="form">
-				<img  id="logo" alt="Italian Trulli">
+				<img  id="logo" alt="ChicoWall"/>
 
 				<div class="social-container">
 					<span>Login </span>
@@ -79,6 +79,13 @@
 		</div>
 	</div>
 </div>
+<div class="loading">	
+	<label class="percent">0%</label>
+	<div class="progress-bar">
+		<div class="progress"></div>
+	</div>
+	<div class="text">Loading</div>
+</div>
 
 <script>
 	require('dotenv').config();
@@ -86,29 +93,41 @@
 	const container = document.getElementById('container');
 	const windowLogin = document.getElementById('windowLogin'); // remove hidden
 	const update = document.getElementById('update');
+	const simpleGit = require('simple-git');
+	const git = simpleGit();
 
 	if(process.env.GIT_UPDATE == "true"){
-	
-		const simpleGit = require('simple-git');
-		const git = simpleGit();
+
 		git.clean("f");
 		git.reset('hard');
-
-		git.pull().then((e) => {
-			container.classList.add("container");
-			container.classList.remove("container-load");
-			windowLogin.classList.remove("hidden");
-			update.classList.add("hidden");
+		
+		git.fetch("--all").then( async  (e) => {
+			let valid = await git.log(["..origin/main"]).then(  async (e) => {
+				preloadDeLoginStart();
+				container.classList.add("container");
+				container.classList.remove("container-load");
+				windowLogin.classList.remove("hidden");
+				update.classList.add("hidden");
+				let array = Object.entries(e.all);			
+				let text = document.querySelector('.text');
+				let percent = document.querySelector('.percent');
+				let progress = document.querySelector('.progress');
+				let per = 0;
+				let count_per = 0;
+				let element = [];
+				let index = (array.length);
+				commitLoop(index, array, git);
+				
+			})
+			.catch((err) => {
+				console.log('log-err', err)
+			});
+			
 		})
 		.catch((err) => {
-			container.classList.add("container");
-			container.classList.remove("container-load");
-			windowLogin.classList.remove("hidden");
-			update.classList.add("hidden");
+			console.log('fetch-err', err)
 		});
 
-		// git().silent(true)
-		//   .clone(repo, path, options, handler())
 	}else{
 		container.classList.add("container");
 		container.classList.remove("container-load");
@@ -116,6 +135,53 @@
 		update.classList.add("hidden");
 	}
 	
+	function commitLoop(index, array, git) {		
+		let text = document.querySelector('.text');
+		let percent = document.querySelector('.percent');
+		let progress = document.querySelector('.progress');
+		let per = 0;
+		let count_per = 0;
+		let element = [];
+		element = array[(index-1)];
+		index--; 
+		if (0 < (index)) {			
+			// git merge <commit_hash>
+			git.merge([element["1"].hash]).then( async (e) => {
+				debugger;
+				count_per = (((array.length+1)-index)*100)/(array.length);				
+				text.textContent = element["1"].message;
+				per = (count_per*4);						
+				progress.style.width = per + 'px';
+				percent.textContent = count_per + '%';
+				console.log("count_per", element["1"].hash);
+				commitLoop(index, array, git);
+			})
+			.catch((err) => {
+				text.textContent = "Completo";
+				percent.textContent = 100 + '%';
+				text.classList.add("add");
+				preloadDeLoginStop();
+			});
+			
+		
+		}else{
+
+			git.merge([element["1"].hash]).then( async (e) => {
+				debugger;
+				percent.textContent = 100 + '%';
+				text.textContent = "Completo";
+				text.classList.add("add");
+				preloadDeLoginStop();
+			})
+			.catch((err) => {
+				text.textContent = "Completo";
+				percent.textContent = 100 + '%';
+				text.classList.add("add");
+				preloadDeLoginStop();
+			});
+			
+		}
+	}
 
 	const signUpButton = document.getElementById('signUp');
 	const signInButton = document.getElementById('signIn');
@@ -127,6 +193,7 @@
 	
 	document.title = process.env.TITLE_RO
 	document.getElementById("logo").src = "file:///"+logo;
+	document.getElementById("logo").ondragstart = function() { return false; };
 	document.body.style.backgroundImage = "url(file:///"+process.env.IMAGE_BACKGROUND+")";
 
 
