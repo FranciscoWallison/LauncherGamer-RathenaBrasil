@@ -41,7 +41,7 @@
 			</div>
 		
 		</div>
-		<div class="form-container sign-in-container">
+		<div id="login-form" class="form-container sign-in-container">
 			<div class="form">
 				<img  id="logo" alt="ChicoWall"/>
 
@@ -64,7 +64,7 @@
 				
 			</div>
 		</div>
-		<div class="overlay-container">
+		<div id="create-form" class="overlay-container">
 			<div class="overlay">
 				
 				<div class="overlay-panel overlay-left">
@@ -72,7 +72,7 @@
 					<p>Para se manter conectado, faça já o seu login</p>
 					<button class="ghost" id="signIn">Entrar</button>
 				</div>
-				<div class="overlay-panel overlay-right">				
+				<div  class="overlay-panel overlay-right">				
 					<h1>Sejá, bem vindo!</h1>
 					<p>Venha se tornar um de nós</p>
 					<button class="ghost" id="signUp">Criar conta</button>
@@ -100,16 +100,26 @@
 	const git = simpleGit();
 	//ativando links
 	const esqueceu_senha = document.getElementById('esqueceu-senha');
+	const criar_conta = document.getElementById('criar-conta');	
 	if(process.env.URL_ESQUECI_SENHA != ""){
 		esqueceu_senha.classList.remove("hidden");
 	}
-
-	const criar_conta = document.getElementById('criar-conta');
 	if(process.env.URL_CREATE_ACCOUNT != ""){
 		criar_conta.classList.remove("hidden");
 	}
-	
+	//ativando API
+	const create_form = document.getElementById('create-form');
+	const login_form = document.getElementById('login-form');	
+	if(process.env.URL_CREATE_ACCOUNT_API == "" &&  process.env.URL_LOGIN_API == "" ){
+		create_form.classList.add("hidden");
+		login_form.style.width  = '100%';
 
+		const usuario = document.getElementById('usuario');
+		const senha = document.getElementById('senha');
+		usuario.style.width  = '70%';
+		senha.style.width  = '70%';
+	}
+	
 	if(process.env.GIT_UPDATE == "true"){
 		loading.classList.remove("hidden");
 		git.clean("f");
@@ -291,7 +301,12 @@
 			tremer();
 			return;
 		}
-		preloadDeLoginStart();		
+		preloadDeLoginStart();
+		if(process.env.URL_CREATE_ACCOUNT_API == "" &&  process.env.URL_LOGIN_API == "" ){
+			preloadDeLoginStop();
+			iniciarLoginSenha(process.env.EXE_RO, senha.value, usuario.value);
+			return;
+		}	
 		// Consultar a api
 		postData(process.env.URL_LOGIN_API,{ userid: usuario.value, password: senha.value })
 		.then(data => {
@@ -326,9 +341,7 @@
 			if(exitErro){
 				tremer();
 			}else{
-				let dir = __dirname.replace("\\resources", "").replace("\\app.asar", "");
-				//pasta do servidor				
-				window.exec(`cd `+dir+` && start `+ process.env.EXE_RO + ` -t:`+senha.value+` `+usuario.value+` -1rag1`, Callback);				
+				iniciarLoginSenha(process.env.EXE_RO, senha.value, usuario.value);
 			}
 			preloadDeLoginStop();
 		}).catch(e => {			
@@ -338,6 +351,12 @@
 			preloadDeLoginStop();
 		});
 	}
+
+	function iniciarLoginSenha(exeRO, senha, user){
+		let dir = __dirname.replace("\\resources", "").replace("\\app.asar", "");
+		//pasta do servidor				
+		window.exec(`cd `+dir+` && start `+ exeRO+ ` -t:`+senha+` `+user+` -1rag1`, Callback);	
+	} 
 
 	function preloadDeLoginStart(){
 		const btn = document.getElementById('btnLogar');
