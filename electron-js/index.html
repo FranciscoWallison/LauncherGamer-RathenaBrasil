@@ -113,11 +113,12 @@
 	if(process.env.URL_CREATE_ACCOUNT_API == "" &&  process.env.URL_LOGIN_API == "" ){
 		create_form.classList.add("hidden");
 		login_form.style.width  = '100%';
-
+		
 		const usuario = document.getElementById('usuario');
 		const senha = document.getElementById('senha');
 		usuario.style.width  = '70%';
 		senha.style.width  = '70%';
+		container.style.width  = '500px';
 	}
 	
 	if(process.env.GIT_UPDATE == "true"){
