@@ -12,17 +12,38 @@ Leia o README.md da [pasta](https://github.com/FranciscoWallison/LauncherGamer-R
 Cire uma arquivo ````.env```` da rais do projeto e adicione as sequinte configurações.
 #### Titulo do ````.exe```` .. com exemplo
 TITLE_RO="RathenaBrasil"
-#### Icone o diretorio do arquivo ````.ico```` que queira usar.. com exemplo
+#### Icone o diretório  do arquivo ````.ico```` que queira usar.. com exemplo
 FILE_ICON="ro.ico"
 #### Imagem de plano de fundo.. com exemplo
 IMAGE_BACKGROUND="background.jpg"
-#### Consuta da Api, validar login.. com exemplo
-URL_LOGIN="http://localhost:6363/api/user/login"
-#### Consuta da Api, criar conta.. com exemplo
-URL_CREATE_Account="http://localhost:6363/api/user/create"
-#### Executavel do servidor, lebrar deixar como ````-1rag1```` .. com exemplo
+## Login senha linkando para o navegador
+````
+OBS::Caso não queira usar, só deixar o campo vazio ou só por os valores com a URL entre aspas duplas.
+Ex:URL_CREATE_ACCOUNT="http://localhost:6363/api/user/login"
+````
+#### Link do seu site para criar a conta
+URL_CREATE_ACCOUNT=
+#### Link do seu site para esqueci a senha
+URL_ESQUECI_SENHA=
+````
+OBS::O esqueci a senha pode ficar ativado com as URL's das API's ativas.
+Ex:URL_ESQUECI_SENHA="http://localhost:6363/api/user/login"
+````
+### Login senha e criar conta linkando para o API
+````
+OBS::Caso não queira usar, só deixar o campo vazio ou só por os valores com a URL entre aspas duplas.
+Ex:URL_CREATE_ACCOUNT="http://localhost:6363/api/user/login".
+OBS::Para funcionar os dois só tem q ter as duas apis ativas.
+````
+#### Consultar da Api, validar login.. com exemplo
+URL_LOGIN_API=
+#### Consultar da Api, criar conta.. com exemplo
+URL_CREATE_ACCOUNT_API=
+
+
+#### Executável do servidor, lebrar deixar como ````-1rag1```` .. com exemplo
 EXE_RO="login.exe"
-#### Executavel o arquivo de configurações.. com exemplo
+#### Executável o arquivo de configurações.. com exemplo
 EXE_SETEUP="Setup.exe"
 #### Imagem da logo que fica no topo de login.. com exemplo
 LOGO="logo.png"
@@ -31,7 +52,7 @@ GIT_UPDATE=false
 
 
 
-#### Consuta da Api, como ele consume as infomrções e manda.
+#### Consultar da Api, como ele consume as infomrções e manda.
 
 ## Resposta de Login
  #### Envio
