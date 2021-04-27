@@ -146,19 +146,13 @@
 			})
 			.catch((err) => {
 				console.log('log-err', err)
-				container.classList.add("container");
-				container.classList.remove("container-load");
-				windowLogin.classList.remove("hidden");
-				update.classList.add("hidden");
+				finalizarAutoLoas();
 			});
 			
 		})
 		.catch((err) => {
 			console.log('fetch-err', err)
-			container.classList.add("container");
-			container.classList.remove("container-load");
-			windowLogin.classList.remove("hidden");
-			update.classList.add("hidden");
+			finalizarAutoLoas();
 		});
 
 	}else{
@@ -200,7 +194,6 @@
 		}else{
 
 			git.merge([element["1"].hash]).then( async (e) => {
-				debugger;
 				percent.textContent = 100 + '%';
 				text.textContent = "Completo";
 				text.classList.add("add");
@@ -214,6 +207,17 @@
 			});
 			
 		}
+	}
+
+	function finalizarAutoLoas(){
+		let text = document.querySelector('.text');
+		let percent = document.querySelector('.percent');
+		let progress = document.querySelector('.progress');
+		text.textContent = "Completo";
+		percent.textContent = 100 + '%';
+		text.classList.add("add");
+		preloadDeLoginStop();
+		
 	}
 
 	const signUpButton = document.getElementById('signUp');
