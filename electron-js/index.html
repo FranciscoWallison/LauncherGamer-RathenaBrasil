@@ -146,11 +146,19 @@
 			})
 			.catch((err) => {
 				console.log('log-err', err)
+				container.classList.add("container");
+				container.classList.remove("container-load");
+				windowLogin.classList.remove("hidden");
+				update.classList.add("hidden");
 			});
 			
 		})
 		.catch((err) => {
 			console.log('fetch-err', err)
+			container.classList.add("container");
+			container.classList.remove("container-load");
+			windowLogin.classList.remove("hidden");
+			update.classList.add("hidden");
 		});
 
 	}else{
