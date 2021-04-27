@@ -53,9 +53,11 @@
 				<span id='result-usuario' class="error"></span>
 				<input class="login" type="password" name="senha" id="senha" placeholder="Senha">
 				<span id='result-senha' class="error"></span>
-				<a href="#">Esqueceu sua senha </a>
-				<button onclick=iniciar() id="btnLogar"><i id="icoPreload" class="hidden fa fa-circle-o-notch fa-spin"></i> Jogar</button>
 				
+				<button onclick=iniciar() id="btnLogar"><i id="icoPreload" class="hidden fa fa-circle-o-notch fa-spin"></i> Jogar</button>
+				<br>
+				<a href="#" id="criar-conta" onclick=openInNewTab(process.env.URL_CREATE_ACCOUNT) class="hidden">Criar conta </a>
+				<a href="#" id="esqueceu-senha" onclick=openInNewTab(process.env.URL_ESQUECI_SENHA) class="hidden">Esqueceu sua senha </a>
 				<div class="gearicon">
 					<i onclick=setup() class="fa fa-gear fa-spin-hover"></i> 
 				</div>
@@ -79,7 +81,7 @@
 		</div>
 	</div>
 </div>
-<div class="loading">	
+<div class="loading hidden" id="loading">	
 	<label class="percent">0%</label>
 	<div class="progress-bar">
 		<div class="progress"></div>
@@ -91,13 +93,25 @@
 	require('dotenv').config();
 
 	const container = document.getElementById('container');
-	const windowLogin = document.getElementById('windowLogin'); // remove hidden
+	const loading = document.getElementById('loading');
+	const windowLogin = document.getElementById('windowLogin');
 	const update = document.getElementById('update');
 	const simpleGit = require('simple-git');
 	const git = simpleGit();
+	//ativando links
+	const esqueceu_senha = document.getElementById('esqueceu-senha');
+	if(process.env.URL_ESQUECI_SENHA != ""){
+		esqueceu_senha.classList.remove("hidden");
+	}
+
+	const criar_conta = document.getElementById('criar-conta');
+	if(process.env.URL_CREATE_ACCOUNT != ""){
+		criar_conta.classList.remove("hidden");
+	}
+	
 
 	if(process.env.GIT_UPDATE == "true"){
-
+		loading.classList.remove("hidden");
 		git.clean("f");
 		git.reset('hard');
 		
@@ -279,7 +293,7 @@
 		}
 		preloadDeLoginStart();		
 		// Consultar a api
-		postData(process.env.URL_LOGIN,{ userid: usuario.value, password: senha.value })
+		postData(process.env.URL_LOGIN_API,{ userid: usuario.value, password: senha.value })
 		.then(data => {
 			
 			if(data != ""){
@@ -407,7 +421,7 @@
 			return;
 		}
 
-		postData(process.env.URL_CREATE_Account,{ 
+		postData(process.env.URL_CREATE_ACCOUNT_API,{ 
 			email: email.value, 
 			userid: username.value,
 			password: password.value,
@@ -556,6 +570,10 @@
 
 	function exit(){
 		window.close();
+	}
+
+	function openInNewTab(url) {
+		require('electron').shell.openExternal(url);
 	}
 </script>
 
