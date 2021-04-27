@@ -9,6 +9,7 @@ NAVEGAÇÃO / VALIDAÇÃO / ATUALIZAÇÃO
 
 ### SEM API:
 VALIDAÇÃO / ATUALIZAÇÃO 
+
 <img src="https://github.com/FranciscoWallison/LauncherGamer-RathenaBrasil/blob/main/apresenta%C3%A7%C3%A3o/load_logar.gif" width="250" /><img src="https://github.com/FranciscoWallison/LauncherGamer-RathenaBrasil/blob/main/apresenta%C3%A7%C3%A3o/load_aotoload.gif" width="250" />
 
 ## Para Desenvolvimento 
