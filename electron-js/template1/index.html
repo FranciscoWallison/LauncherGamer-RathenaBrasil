@@ -231,8 +231,8 @@
 	document.title = process.env.TITLE_RO
 	document.getElementById("logo").src = "file:///"+logo;
 	document.getElementById("logo").ondragstart = function() { return false; };
-	document.body.style.backgroundImage = "url(file:///"+process.env.IMAGE_BACKGROUND+")";
-
+	document.body.style.backgroundImage = "url("+process.env.IMAGE_BACKGROUND+")";
+	document.body.ondragstart = function() { return false; };
 
 	async function postData(url = '', data = {}) {
 		// Default options are marked with *
