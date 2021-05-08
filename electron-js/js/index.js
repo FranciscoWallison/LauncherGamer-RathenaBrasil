@@ -177,12 +177,14 @@ function CallbackSetup(err, stdout, stderr) {
 }
 
 window.exec = exec;
-signUpButton.addEventListener('click', () => {
-	container.classList.add("right-panel-active");
-});
-signInButton.addEventListener('click', () => {
-	container.classList.remove("right-panel-active");
-});
+if(signUpButton != null){
+	signUpButton.addEventListener('click', () => {
+		container.classList.add("right-panel-active");
+	});
+	signInButton.addEventListener('click', () => {
+		container.classList.remove("right-panel-active");
+	});	
+}
 
 function setup(){
 	let dir = __dirname.replace("\\resources", "").replace("\\app.asar", "");
