@@ -2,13 +2,14 @@
   "name": "app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./template2/index.js",
   "scripts": {
     "dev-1": "electron ./template1",
     "dev-2": "electron ./template2",
     "pack": "electron-builder --dir",
-    "dist1": "electron-builder --projectDir ./template1",
-    "dist2": "electron-builder --projectDir ./template2"
+    "dist": "electron-builder",
+    "dist1": "electron-builder --prepackaged ./template1",
+    "dist2": "electron-builder --prepackaged ./template2"
   },
   "keywords": [],
   "author": "",
