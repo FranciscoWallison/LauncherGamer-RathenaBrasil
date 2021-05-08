@@ -18,8 +18,8 @@
     </div>
     <img id="logo" alt="ChicoWall"/>
   </div>
-  <div class="three"> <button class="game-button red"><i class="fas fa-window-maximize"></i> rAthena</button> </div>
-  <div class="four"> <button class="game-button orange"><i class="fab fa-discord"></i> Discord</button> </div>
+  <div class="three"> <button class="game-button red"  onclick=openInNewTab(process.env.URL_SITE) ><i class="fas fa-window-maximize"></i> rAthena</button> </div>
+  <div class="four"> <button class="game-button orange"  onclick=openInNewTab(process.env.URL_DISCORD) ><i class="fab fa-discord"></i> Discord</button> </div>
   <div class="five"><button onclick=iniciar(false) id="btnLogar" class="game-button green"><i id="icoPreload" class="fas fa-play"></i> Start</button></div>
   <div class="six">
     
@@ -35,11 +35,8 @@
 <script src="../js/index.js"></script>
 <script>
   // config padrão
-  // document.getElementById("logo").src = "logo.png";
-	// document.getElementById("logo").ondragstart = function() { return false; };
- 
   //do layout 
-  document.getElementById("iframe").src = "http://localhost:3333/pages/client/"
+  document.getElementById("iframe").src = process.env.URL_NOTICIA
   
 </script>
 
