@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MeuRO</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+  <script defer src="fontawesome/js/all.js"></script>
+  <link href="fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
+
+</head>
+<body>
+<div class="wrapper">
+  <div class="one" id="notice"> 
+    <iframe id="iframe" sandbox='allow-scripts' src='https://www.google.com/&output=embed' ></iframe>
+  </div>
+  <div class="two">
+    <div class="exiticon">
+      <i onclick=exit() class="fa fa-times focus-exit"></i>
+    </div>
+    <img id="logo" alt="ChicoWall"/>
+  </div>
+  <div class="three"> <button class="game-button red"><i class="fas fa-window-maximize"></i> rAthena</button> </div>
+  <div class="four"> <button class="game-button orange"><i class="fab fa-discord"></i> Discord</button> </div>
+  <div class="five"><button onclick=iniciar(false) id="btnLogar" class="game-button green"><i class="fas fa-play"></i> Start</button></div>
+  <div class="six">
+    
+    <div class="loading" id="loading">          
+      <span class="progress" ></span>
+    </div>  
+    <div class="text-load">
+      <span class="text">Loading</span><span class="percent">0%</span>
+    </div>        
+  </div>
+</div>
+
+<script src="../js/index.js"></script>
+<script>
+  // config padrão
+  // document.getElementById("logo").src = "logo.png";
+	// document.getElementById("logo").ondragstart = function() { return false; };
+ 
+  //do layout 
+  document.getElementById("iframe").src = "http://localhost:3333/pages/client/"
+  
+</script>
+
+</body>
+</html>
