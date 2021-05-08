@@ -3,5 +3,5 @@
 !.gitignore
 !index.html
 !index.js
-!css
-!css/style.css
+!fontawesome/
+!style.css
