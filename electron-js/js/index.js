@@ -117,7 +117,6 @@ function commitLoop(index, array, git) {
 function finalizarAutoLoas(){
 	let text = document.querySelector('.text');
 	let percent = document.querySelector('.percent');
-	let progress = document.querySelector('.progress');
 	text.textContent = "Completo";
 	percent.textContent = 100 + '%';
 	text.classList.add("add");
@@ -227,7 +226,11 @@ function iniciar(validUser){
 	preloadDeLoginStart();
 	if(process.env.URL_CREATE_ACCOUNT_API == "" &&  process.env.URL_LOGIN_API == "" ){
 		preloadDeLoginStop();
-		iniciarLoginSenha(process.env.EXE_RO, senha.value, usuario.value);
+		if(validUser){
+			iniciarLoginSenha(process.env.EXE_RO, senha.value, usuario.value);
+		}else{
+			iniciarLoginSenha(process.env.EXE_RO, null, null);
+		}
 		return;
 	}
 	if(validUser){
@@ -280,7 +283,11 @@ function iniciar(validUser){
 
 function iniciarLoginSenha(exeRO, senha, user){
 	let dir = __dirname.replace("\\resources", "").replace("\\app.asar", "");
-	//pasta do servidor				
+	if(senha === null && user === null){
+		window.exec(`cd `+dir+` && start `+ exeRO, Callback);	
+		return;
+	}
+	//pasta do servidor
 	window.exec(`cd `+dir+` && start `+ exeRO+ ` -t:`+senha+` `+user+` -1rag1`, Callback);	
 } 
 
@@ -291,12 +298,13 @@ function preloadDeLoginStart(){
 
 	btn.classList.add('preLoadLogin');
 	btn.setAttribute("disabled","true");
-	usuario.setAttribute("disabled","true");
-	senha.setAttribute("disabled","true");		
-	
-	
+	if(usuario != null && senha != null){
+		usuario.setAttribute("disabled","true");
+		senha.setAttribute("disabled","true");
+	}
+
 	const icoPreload = document.getElementById('icoPreload');
-	icoPreload.classList.remove('hidden');	
+	icoPreload.classList.remove('hidden');
 }
 
 function preloadDeLoginStop(){
@@ -306,14 +314,13 @@ function preloadDeLoginStop(){
 
 	btn.classList.remove('preLoadLogin');
 	btn.removeAttribute("disabled");
-	usuario.removeAttribute("disabled");
-	senha.removeAttribute("disabled");
-
+	if(usuario != null && senha != null){
+		usuario.removeAttribute("disabled");
+		senha.removeAttribute("disabled");
+	}
 
 	const icoPreload = document.getElementById('icoPreload');
 	icoPreload.classList.add('hidden');	
-
-	
 }
 
 

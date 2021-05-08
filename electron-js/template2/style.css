@@ -1,5 +1,4 @@
 body{
-  background-image: url("11111.jpg");
     /* Full height */
     height: 100%;
 
@@ -268,4 +267,8 @@ pre {
 .exiticon{text-align: right;color: #fff;font-size: 27px;}
 .focus-exit{
 	cursor: pointer;
+}
+
+.preLoadLogin{ 
+	background: #8d9aa6f2;
 }
