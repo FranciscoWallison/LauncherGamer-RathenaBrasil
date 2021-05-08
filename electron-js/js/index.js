@@ -33,20 +33,48 @@ if(process.env.URL_CREATE_ACCOUNT_API == "" &&
 }
 
 if(process.env.GIT_UPDATE == "true"){
+	//validar de o arquivo .git estar ok
+	validGit();	
+}else{
+	container.classList.add("container");
+	container.classList.remove("container-load");
+	windowLogin.classList.remove("hidden");
+	update.classList.add("hidden");
+}
+
+function validGit(){
+	let dir = __dirname.replace("\\resources", "").replace("\\app.asar", "");
+	const fs = require("fs"); // Or `import fs from "fs";` with ESM
+	if (!fs.existsSync(dir+"\\.git")) {
+		git.clone(process.env.GIT_REPO_PATH, ["."])
+		.then(() => {
+			validGit();
+		})
+		.catch((err) => {
+			validGit();
+			console.log("error", err)
+			console.error('failed: ', err)
+		});
+	}else{
+		updateAutoPatch()
+	}
+}
+
+function updateAutoPatch(){
 	loading.classList.remove("hidden");
-	// git.clean("f");
-	// git.reset('hard');
+	git.clean("f");
+	git.reset('hard');
 	
 	git.fetch("--all").then( async  (e) => {
 		let valid = await git.log(["..origin/main"]).then(  async (e) => {
 			preloadDeLoginStart();
 			container.classList.add("container");
 			container.classList.remove("container-load");
-			// windowLogin.classList.remove("hidden");
-			// update.classList.add("hidden");
-			// let array = Object.entries(e.all);
-			// let index = (array.length);
-			// commitLoop(index, array, git);
+			windowLogin.classList.remove("hidden");
+			update.classList.add("hidden");
+			let array = Object.entries(e.all);
+			let index = (array.length);
+			commitLoop(index, array, git);
 			
 		})
 		.catch((err) => {
@@ -59,12 +87,6 @@ if(process.env.GIT_UPDATE == "true"){
 		console.log('fetch-err', err)
 		finalizarAutoLoas();
 	});
-
-}else{
-	container.classList.add("container");
-	container.classList.remove("container-load");
-	windowLogin.classList.remove("hidden");
-	update.classList.add("hidden");
 }
 
 function commitLoop(index, array, git) {		
