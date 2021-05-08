@@ -10,3 +10,5 @@
 !js
 !js/index.js
 !template2
+!.env.example1
+!.env.example2
