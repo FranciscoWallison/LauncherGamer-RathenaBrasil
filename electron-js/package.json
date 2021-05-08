@@ -7,7 +7,8 @@
     "dev-1": "electron ./template1",
     "dev-2": "electron ./template2",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist1": "electron-builder --projectDir ./template1",
+    "dist2": "electron-builder --projectDir ./template2"
   },
   "keywords": [],
   "author": "",
