@@ -14,11 +14,11 @@ app.on('ready', () => {
         height:700,
         fullscreen: false,
         resizable: false,
-        frame: true,
+        frame: false,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
-            devTools: true
+            devTools: false
         }
     });
 
