@@ -25,8 +25,8 @@ app.on('ready', () => {
     });
 
     mainWindow.loadURL(`file://${__dirname}/index.html`);
-    // let dir = __dirname.replace("\\resources", "").replace("\\app.asar", "");
-    // mainWindow.setIcon(`${dir}\\`+process.env.FILE_ICON);
+    let dir = __dirname.replace("\\resources", "").replace("\\app.asar", "").replace("\\template2", "").replace("\\template1", "");
+    mainWindow.setIcon(`${dir}\\`+process.env.FILE_ICON);
 
     // shell.openItem(app.getAppPath() + '\\local\\print.bat');
 })

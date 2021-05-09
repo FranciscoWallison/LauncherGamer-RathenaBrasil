@@ -6,6 +6,8 @@ const windowLogin = document.getElementById('windowLogin');
 const update = document.getElementById('update');
 const simpleGit = require('simple-git');
 const git = simpleGit();
+const exec = require('child_process').exec;
+window.exec = exec;
 //ativando links
 const esqueceu_senha = document.getElementById('esqueceu-senha');
 const criar_conta = document.getElementById('criar-conta');	
@@ -34,6 +36,7 @@ if(process.env.URL_CREATE_ACCOUNT_API == "" &&
 
 if(process.env.GIT_UPDATE == "true"){
 	//validar de o arquivo .git estar ok
+	preloadDeLoginStart();
 	validGit();	
 }else{
 	container.classList.add("container");
@@ -43,14 +46,28 @@ if(process.env.GIT_UPDATE == "true"){
 }
 
 function validGit(){
-	let dir = __dirname.replace("\\resources", "").replace("\\app.asar", "");
+	let dirRepo = __dirname.replace("\\resources", "").replace("\\app.asar", "").replace("\\template2", "").replace("\\template1", "");
 	const fs = require("fs"); // Or `import fs from "fs";` with ESM
-	if (!fs.existsSync(dir+"\\.git")) {
-		git.clone(process.env.GIT_REPO_PATH, ["."])
-		.then(() => {
+	if (!fs.existsSync(dirRepo+"\\.git\\config")) {
+
+		let pastaRepor = process.env.GIT_REPO_PATH.replace("https://github.com/", "")
+						.replace(".git", "");
+		
+		pastaRepor = pastaRepor.split("/");
+		
+		git.clone(process.env.GIT_REPO_PATH)
+		.then( async () => {
+			setTimeout(async () => {
+				let copy = `xcopy "`+dirRepo+`\\`+pastaRepor[1]+`" "`+dirRepo+`" /s /e /h /y`;
+				await window.exec(copy, CallbackSetup)
+			}, 3000)
+
+			await window.exec(`cd `+dirRepo+`\\ && rd /s /q `+ pastaRepor[1], CallbackSetup)
+			
 			validGit();
 		})
 		.catch((err) => {
+			window.exec(`cd `+dirRepo+`\\ && rd /s /q `+ pastaRepor[1], CallbackSetup);
 			validGit();
 			console.log("error", err)
 			console.error('failed: ', err)
@@ -67,7 +84,7 @@ function updateAutoPatch(){
 	
 	git.fetch("--all").then( async  (e) => {
 		let valid = await git.log(["..origin/main"]).then(  async (e) => {
-			preloadDeLoginStart();
+			// preloadDeLoginStart();
 			container.classList.add("container");
 			container.classList.remove("container-load");
 			windowLogin.classList.remove("hidden");
@@ -148,9 +165,8 @@ function finalizarAutoLoas(){
 
 const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
-const exec = require('child_process').exec;
 
-let dir = __dirname.replace("\\resources", "").replace("\\app.asar", "");
+let dir = __dirname.replace("\\resources", "").replace("\\app.asar", "").replace("\\template2", "").replace("\\template1", "");
 let logo = 	dir = dir+'\\'+process.env.LOGO;	
 // let backgroundImage = dir = dir+'\\'+process.env.IMAGE_BACKGROUND;
 
@@ -197,7 +213,7 @@ function CallbackSetup(err, stdout, stderr) {
 	}
 }
 
-window.exec = exec;
+
 if(signUpButton != null){
 	signUpButton.addEventListener('click', () => {
 		container.classList.add("right-panel-active");
@@ -208,9 +224,9 @@ if(signUpButton != null){
 }
 
 function setup(){
-	let dir = __dirname.replace("\\resources", "").replace("\\app.asar", "");
-	dir = dir+'\\';	
-	window.exec(`cd `+dir+` && start `+process.env.EXE_SETEUP, CallbackSetup);
+	let dirSetup = __dirname.replace("\\resources", "").replace("\\app.asar", "").replace("\\template2", "").replace("\\template1", "");
+	dirSetup = dirSetup+'\\';	
+	window.exec(`cd `+dirSetup+` && start `+process.env.EXE_SETEUP, CallbackSetup);
 }
 
 function iniciar(validUser){
@@ -304,7 +320,7 @@ function iniciar(validUser){
 }
 
 function iniciarLoginSenha(exeRO, senha, user){
-	let dir = __dirname.replace("\\resources", "").replace("\\app.asar", "");
+	let dir = __dirname.replace("\\resources", "").replace("\\app.asar", "").replace("\\template2", "").replace("\\template1", "");
 	if(senha === null && user === null){
 		window.exec(`cd `+dir+` && start `+ exeRO, Callback);	
 		return;
