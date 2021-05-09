@@ -127,10 +127,10 @@ iframe{
   box-shadow: 0 4px 0 #ae2725, 0 6px 1px 1px rgba(0,0,0,.3), 0 8px 0 5px #831614, 0 10px 0 5px #a33634, 0 13px 0 5px #631716, 0 13px 1px 6px rgba(0,0,0,.3);
 }
 .game-button.green {
-   background: repeating-linear-gradient( 45deg, #54d440, #54d440 5px, #52cc3f 5px, #52cc3f 10px);
-    box-shadow: 0 6px 0 #348628, 0 8px 1px 1px rgba(0,0,0,.3), 0 10px 0 5px #2a6d20, 0 12px 0 5px #39822e, 0 15px 0 5px #1d4c16, 0 15px 1px 6px rgba(0,0,0,.3);
-    border-bottom: 3px solid rgba(40, 117, 29, 0.5);
-    text-shadow: 2px 2px 1px #348628, -2px 2px 1px #348628, 2px -2px 1px #348628, -2px -2px 1px #348628, 0px 2px 1px #348628, 0px -2px 1px #348628, 0px 4px 1px #1d4c16, 2px 4px 1px #1d4c16, -2px 4px 1px #1d4c16;
+  background: repeating-linear-gradient( 45deg, #54d440, #54d440 5px, #52cc3f 5px, #52cc3f 10px);
+  box-shadow: 0 6px 0 #348628, 0 8px 1px 1px rgba(0,0,0,.3), 0 10px 0 5px #2a6d20, 0 12px 0 5px #39822e, 0 15px 0 5px #1d4c16, 0 15px 1px 6px rgba(0,0,0,.3);
+  border-bottom: 3px solid rgba(40, 117, 29, 0.5);
+  text-shadow: 2px 2px 1px #348628, -2px 2px 1px #348628, 2px -2px 1px #348628, -2px -2px 1px #348628, 0px 2px 1px #348628, 0px -2px 1px #348628, 0px 4px 1px #1d4c16, 2px 4px 1px #1d4c16, -2px 4px 1px #1d4c16;
 }
 .game-button.green:hover {
   top:2px;
@@ -269,6 +269,9 @@ pre {
 	cursor: pointer;
 }
 
-.preLoadLogin{ 
-	background: #8d9aa6f2;
-}
+.preLoadLogin{
+  background: repeating-linear-gradient( 45deg, #8d9aa6f2, #8d9aa6f2 5px, #8d9aa6f2 5px, #8d9aa6f2 10px) !important;
+  box-shadow: 0 6px 0 #8d9aa6f2, 0 8px 1px 1px rgba(0,0,0,.3), 0 10px 0 5px #8d9aa6f2, 0 12px 0 5px #8d9aa6f2, 0 15px 0 5px #8d9aa6f2, 0 15px 1px 6px rgba(0,0,0,.3) !important;
+  border-bottom: 3px solid #8d9aa61a!important;
+  text-shadow: 2px 2px 1px #8d9aa6f2, -2px 2px 1px #8d9aa6f2, 2px -2px 1px #8d9aa6f2, -2px -2px 1px #8d9aa6f2, 0px 2px 1px #8d9aa6f2, 0px -2px 1px #8d9aa6f2, 0px 4px 1px #8d9aa682, 2px 4px 1px #8d9aa68c, -2px 4px 1px #8d9aa661 !important;
+ }
