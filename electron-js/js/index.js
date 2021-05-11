@@ -563,5 +563,8 @@ function exit(){
 }
 
 function openInNewTab(url) {
+	if(url === "" || url == undefined)
+		return;
+		
 	require('electron').shell.openExternal(url);
 }
