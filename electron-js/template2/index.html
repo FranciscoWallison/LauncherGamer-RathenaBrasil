@@ -18,7 +18,7 @@
     </div>
     <img id="logo" alt="ChicoWall"/>
   </div>
-  <div class="three"> <button class="game-button red"  onclick=openInNewTab(process.env.URL_SITE) ><i class="fas fa-window-maximize"></i> rAthena</button> </div>
+  <div class="three"> <button id="name-serve" class="game-button red"  onclick=openInNewTab(process.env.URL_SITE) ><i class="fas fa-window-maximize"></i> rAthena</button> </div>
   <div class="four"> <button class="game-button orange"  onclick=openInNewTab(process.env.URL_DISCORD) ><i class="fab fa-discord"></i> Discord</button> </div>
   <div class="five"><button onclick=iniciar(false) id="btnLogar" class="game-button green"><i id="icoPreload" class="fas fa-play"></i> Start</button></div>
   <div class="six">
@@ -37,6 +37,9 @@
   // config padrão
   //do layout 
   document.getElementById("iframe").src = process.env.URL_NOTICIA
+  document.getElementById('name-serve').innerHTML = '<i class="fas fa-window-maximize"></i> '+process.env.TITLE_RO
+  
+ 
   
 </script>
 
