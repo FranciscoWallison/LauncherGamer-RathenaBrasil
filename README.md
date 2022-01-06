@@ -42,9 +42,9 @@ Ex:URL_ESQUECI_SENHA="http://localhost:6363/api/user/login"
 ````
 ### Login senha e criar conta linkando para o API
 ````
-OBS::Caso não queira usar, só deixar o campo vazio ou só por os valores com a URL entre aspas duplas.
+OBS::Caso não queira usar só deixar o campo vazio ou por os valores com a URL entre aspas duplas.
 Ex:URL_CREATE_ACCOUNT="http://localhost:6363/api/user/login".
-OBS::Para funcionar os dois só tem q ter as duas apis ativas.
+OBS::Para funcionar os dois tem que ter as duas apis ativas.
 ````
 #### Consultar da Api, validar login.. com exemplo
 URL_LOGIN_API=
