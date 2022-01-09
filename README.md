@@ -16,6 +16,7 @@ VALIDAÇÃO / ATUALIZAÇÃO
 ### TEMPLATE 2 SÓ AutoPatcher 
 <img src="https://github.com/FranciscoWallison/LauncherGamer-RathenaBrasil/blob/main/apresenta%C3%A7%C3%A3o/template2.gif" width="250" />
 
+# OBS - Ainda em fase de teste
 
 ## Para Desenvolvimento 
 Leia o README.md da [pasta](https://github.com/FranciscoWallison/LauncherGamer-RathenaBrasil/tree/main/electron-js) ````./electron-js````
