@@ -4,7 +4,7 @@
 
 [Video: Comunicando com api](https://www.youtube.com/watch?v=EjY1lTSxmeo&list=PLAJFB9irKbHW4Qs4kWZpUqGECm-BXnPyQ&index=1)
 
-[Video: Breve sobre o projeo](https://www.youtube.com/watch?v=4BeqWathWTE&list=PLAJFB9irKbHW4Qs4kWZpUqGECm-BXnPyQ&index=2)
+[Video: Resumo sobre o projeo](https://www.youtube.com/watch?v=4BeqWathWTE&list=PLAJFB9irKbHW4Qs4kWZpUqGECm-BXnPyQ&index=2)
 
 
 ### COM API:
