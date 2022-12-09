@@ -25,8 +25,8 @@ VALIDAÇÃO / ATUALIZAÇÃO
 # OBS - Ainda em fase de teste
 ## Uso
 ````
-Esse projeto tem como objetivo de atualizar o projeto do lado do cliente usando git e repositórios git's.
-Para está usando precisa criar um instalador pelo ELECTRON.JS, recomendo que deixe só a pasta data caso tenha criptografada e itens comumente padrão no instalador.
+Tem como objetivo de atualizar o projeto do lado do cliente usando git e repositórios git's.
+Para está usando precisa criar um instalador pelo ELECTRON.JS, recomendo que deixe só a pasta data.grf caso tenha criptografada e itens comumente padrão no instalador.
 ````
 
 ## Para Desenvolvimento 
