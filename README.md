@@ -23,6 +23,11 @@ VALIDAÇÃO / ATUALIZAÇÃO
 <img src="https://github.com/FranciscoWallison/LauncherGamer-RathenaBrasil/blob/main/apresenta%C3%A7%C3%A3o/template2.gif" width="250" />
 
 # OBS - Ainda em fase de teste
+## Uso
+````
+Esse projeto tem como objetivo de atualizar o projeto do lado do cliente usando git e repositórios git's.
+Para está usando precisa criar um instalador pelo ELECTRON.JS, recomendo que deixe só a pasta data caso tenha criptografada e itens comumente padrão no instalador.
+````
 
 ## Para Desenvolvimento 
 Leia o README.md da [pasta](https://github.com/FranciscoWallison/LauncherGamer-RathenaBrasil/tree/main/electron-js) ````./electron-js````
