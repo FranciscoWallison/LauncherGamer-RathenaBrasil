@@ -75,7 +75,7 @@ GIT_UPDATE=false
 
 
 
-#### Consultar da Api, como ele consume as infomrções e manda.
+#### Consumindo Api
 
 # Resposta de Login
 #### Envio
