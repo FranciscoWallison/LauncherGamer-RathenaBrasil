@@ -73,8 +73,6 @@ LOGO="logo.png"
 #### Funcionalidade GIT OBS::AINDA EM FASE DE TESTE.
 GIT_UPDATE=false
 
-
-
 #### Consumindo Api
 
 # Resposta de Login
