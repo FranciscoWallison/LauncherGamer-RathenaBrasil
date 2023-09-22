@@ -73,6 +73,10 @@ LOGO="logo.png"
 #### Funcionalidade GIT OBS::AINDA EM FASE DE TESTE.
 GIT_UPDATE=false
 
+````
+Alternativa de repositorio open soucer de Repositório Git
+https://docs.gitness.com/
+````
 #### Consumindo Api
 
 # Resposta de Login
