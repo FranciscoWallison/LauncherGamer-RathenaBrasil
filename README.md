@@ -1,6 +1,6 @@
 # Launcher Gamer-RathenaBrasil
 
-[Video: Configurações completa](https://www.youtube.com/watch?v=4BeqWathWTE&list=PLAJFB9irKbHW4Qs4kWZpUqGECm-BXnPyQ&index=2)
+[Video: Configurações completa (Não funcionar mais)](https://www.youtube.com/watch?v=4BeqWathWTE&list=PLAJFB9irKbHW4Qs4kWZpUqGECm-BXnPyQ&index=2)
 
 [Video: Usando com api](https://www.youtube.com/watch?v=EjY1lTSxmeo&list=PLAJFB9irKbHW4Qs4kWZpUqGECm-BXnPyQ&index=1)
 
