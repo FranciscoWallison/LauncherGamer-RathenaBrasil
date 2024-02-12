@@ -69,7 +69,7 @@ EXE_RO="login.exe"
 EXE_SETEUP="Setup.exe"
 #### Imagem da logo que fica no topo de login.. com exemplo
 LOGO="logo.png"
-#### Funcionalidade GIT OBS::AINDA EM FASE DE TESTE.
+#### Funcionalidade 
 GIT_UPDATE=false
 
 ````
