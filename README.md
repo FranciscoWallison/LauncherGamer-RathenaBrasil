@@ -2,7 +2,7 @@
 
 [Video: Configurações GitNess](https://www.youtube.com/watch?v=rHde8HOrgSU)
 
-[Video: Configurações completa (Antigo)](https://www.youtube.com/watch?v=4BeqWathWTE&list=PLAJFB9irKbHW4Qs4kWZpUqGECm-BXnPyQ&index=2)
+[Video: Configurações completa (Antigo e Exemplo)](https://www.youtube.com/watch?v=4BeqWathWTE&list=PLAJFB9irKbHW4Qs4kWZpUqGECm-BXnPyQ&index=2)
 
 [Video: Usando com api](https://www.youtube.com/watch?v=EjY1lTSxmeo&list=PLAJFB9irKbHW4Qs4kWZpUqGECm-BXnPyQ&index=1)
 
