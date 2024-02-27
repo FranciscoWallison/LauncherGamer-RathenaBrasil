@@ -1,6 +1,6 @@
 # Launcher Gamer-RathenaBrasil
 
-[Video: Configurações GitNess](https://www.youtube.com/watch?v=rHde8HOrgSU)
+[Video: Configurações usando GitNess](https://www.youtube.com/watch?v=rHde8HOrgSU)
 
 [Video: Configurações completa (Antigo e Exemplo)](https://www.youtube.com/watch?v=4BeqWathWTE&list=PLAJFB9irKbHW4Qs4kWZpUqGECm-BXnPyQ&index=2)
 
