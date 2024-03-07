@@ -50,7 +50,7 @@ URL_CREATE_ACCOUNT=
 #### Link do seu site para esqueci a senha
 URL_ESQUECI_SENHA=
 ````
-OBS::O esqueci a senha pode ficar ativado com as URL's das API's ativas.
+OBS::O esqueci a senha pode ficar ativado quando passa a URL
 Ex:URL_ESQUECI_SENHA="http://localhost:6363/api/user/login"
 ````
 ### Login senha e criar conta linkando para o API
